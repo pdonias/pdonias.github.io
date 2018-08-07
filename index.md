@@ -2,5 +2,5 @@
 
 - [GitHub](https://github.com/pdonias)
 - [LinkedIn](https://www.linkedin.com/in/pierre-donias-09a8b3aa)
-- [Curriculum Vitae]({% link /assets/cv.pdf %})
+- [Curriculum Vitae]({% link /cv.pdf %})
 - [pierre.donias@gmail.com](mailto:pierre.donias@gmail.com)
