@@ -1,8 +1,11 @@
 title: Pierre Donias
-description: 
-google_analytics: 
-show_downloads: true
+description:
+google_analytics:
+show_downloads: false
 theme: jekyll-theme-slate
 
 gems:
   - jekyll-mentions
+
+github:
+  is_project_page: false
