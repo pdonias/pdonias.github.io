@@ -3,4 +3,4 @@
 - [GitHub](https://github.com/pdonias)
 - [LinkedIn](https://www.linkedin.com/in/pdonias)
 - [Curriculum Vitae]({% link /cv.pdf %})
-- [pierre.donias@gmail.co](mailto:pierre.donias@gmail.com)[m](https://spam-bait.herokuapp.com)
+- [pierre.donias@gmail.co](mailto:pierre.donias@gmail.com)[m](https://spam-bait.herokuapp.com?from=pierre.donias.fr)
