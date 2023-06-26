@@ -1,7 +1,7 @@
 {% include google_analytics.html %}
+{% include google_analytics.html %}
 
-[Xen Orchestra](https://xen-orchestra.com/) developer at [Vates SAS](https://vates.fr/) ([GitHub](https://github.com/vatesfr/xen-orchestra/))
-
+- Web Developer at [Vates SAS](https://vates.tech/)
 - [GitHub](https://github.com/pdonias)
 - [LinkedIn](https://www.linkedin.com/in/pdonias)
 - [Curriculum Vitae]({% link /cv.pdf %})
