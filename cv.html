@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>CV — Pierre Donias</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-outer: #edf0f4;
+        --bg: #ffffff;
+        --text: #1c2128;
+        --muted: #636e7b;
+        --accent: #0550ae;
+        --border: #d8dee4;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(0, 0, 0, 0.06);
+        --skill-track: #e5e7eb;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-outer: #070a0f;
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #848d97;
+        --accent: #58a6ff;
+        --border: #30363d;
+        --shadow: 0 0 0 1px #30363d;
+        --skill-track: #21262d;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-outer);
+      color: var(--text);
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+
+    /* ── Header ──────────────────────────────────────────────── */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-name h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .header-name .job-title {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 0.45rem;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .contact-item a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    .contact-item svg {
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    /* ── Two-column layout ───────────────────────────────────── */
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 2.5rem;
+    }
+
+    /* ── Section headings ────────────────────────────────────── */
+
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Entries (education & experience) ────────────────────── */
+
+    .entry {
+      margin-bottom: 1.1rem;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .entry-title .sep {
+      font-weight: 400;
+      color: var(--muted);
+      margin: 0 0.2rem;
+    }
+
+    .entry-title .org {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .entry-title .location {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .entry-date {
+      font-size: 0.775rem;
+      color: var(--muted);
+      margin: 0.2rem 0 0.3rem;
+    }
+
+    .entry-body {
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    .entry-body p + p {
+      margin-top: 0.2rem;
+    }
+
+    .entry-tags {
+      font-size: 0.775rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────── */
+
+    .sidebar-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-block:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Skills */
+
+    .skill {
+      margin-bottom: 0.75rem;
+    }
+
+    .skill:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-name {
+      font-size: 0.8125rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-bar {
+      height: 3px;
+      background: var(--skill-track);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Interests */
+
+    .interest {
+      font-size: 0.8125rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .interest:last-child {
+      margin-bottom: 0;
+    }
+
+    .interest .note {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Social links */
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .social a {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .social a:hover {
+      color: var(--accent);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0;
+      }
+
+      .page {
+        border-radius: 0;
+        padding: 1.5rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .header-contact {
+        text-align: left;
+      }
+
+      .contact-item {
+        justify-content: flex-start;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Print ───────────────────────────────────────────────── */
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        padding: 0;
+      }
+
+      .page {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 1.2cm 1.8cm;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .skill-fill {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="header-name">
+        <h1>Pierre Donias</h1>
+        <p class="job-title">Développeur web</p>
+      </div>
+      <div class="header-contact">
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:pierre.donias@gmail.com">pierre.donias@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>41 rue du Drac, 38000 Grenoble</span>
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>33 ans</span>
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Permis B</span>
+        </div>
+        <div class="contact-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.21 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>06 66 18 24 87</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="columns">
+
+      <main>
+
+        <section>
+          <h2>Diplômes et Formations</h2>
+
+          <div class="entry">
+            <p class="entry-title">
+              Master Génie Informatique
+              <span class="sep">—</span>
+              <span class="org">Université Grenoble Alpes</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2014 à août 2016</p>
+            <div class="entry-body">
+              <p>Mention Bien</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Licence Mathématiques et Informatique
+              <span class="sep">—</span>
+              <span class="org">Université Joseph Fourier</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2012 à août 2014</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Cycle Préparatoire Polytechnique
+              <span class="sep">—</span>
+              <span class="org">Institut National Polytechnique</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2010 à août 2012</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Lycée International
+              <span class="sep">—</span>
+              <span class="org">Cité Scolaire Internationale Europole</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2007 à juin 2010</p>
+            <div class="entry-body">
+              <p>Parcours OIB (Option Internationale du Baccalauréat) en 2nde et 1ère</p>
+              <p>Parcours Esabac (Esame di Stato) en italien en Terminale</p>
+              <p>Baccalauréat S Mention Bien</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Expériences professionnelles</h2>
+
+          <div class="entry">
+            <p class="entry-title">
+              Concepteur Développeur Web
+              <span class="sep">—</span>
+              <span class="org">Vates SAS</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">Depuis septembre 2016</p>
+            <div class="entry-body">
+              <p>Développement de Xen Orchestra, interface web pour l'administration de machines virtuelles sur XCP-ng et XenServer.</p>
+            </div>
+            <p class="entry-tags">JavaScript, TypeScript, Node.js, React, Vue.js</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Alternance Concepteur Développeur Web
+              <span class="sep">—</span>
+              <span class="org">Vates SAS</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2015 à août 2016</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Stage Développeur C
+              <span class="sep">—</span>
+              <span class="org">Inria</span>
+              <span class="location">Montbonnot-Saint-Martin</span>
+            </p>
+            <p class="entry-date">De juin 2015 à juillet 2015</p>
+            <div class="entry-body">
+              <p>Caractérisation des performances d'une machine Numascale à 192 cœurs.</p>
+            </div>
+            <p class="entry-tags">C, OpenMP, R, LaTeX</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Stage Développeur Java
+              <span class="sep">—</span>
+              <span class="org">UFR IM²AG</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De juin 2014 à juillet 2014</p>
+            <div class="entry-body">
+              <p>Etude de la population et des espaces verts de la Région Urbaine de Grenoble.</p>
+            </div>
+            <p class="entry-tags">Java, Python</p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Stage Opérateur de machine
+              <span class="sep">—</span>
+              <span class="org">ARaymond</span>
+              <span class="location">Saint-Egrève</span>
+            </p>
+            <p class="entry-date">De juillet 2012 à août 2012</p>
+            <div class="entry-body">
+              <p>Manipulation de machines d'emballage de pièces de fixation automobile.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">
+              Cours particuliers de Mathématiques
+              <span class="sep">—</span>
+              <span class="location">Grenoble</span>
+            </p>
+            <p class="entry-date">De septembre 2012 à août 2016</p>
+          </div>
+        </section>
+
+      </main>
+
+      <aside>
+
+        <div class="sidebar-block">
+          <h2>Langues</h2>
+          <div class="skill">
+            <p class="skill-name">Anglais</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <h2>Programmation</h2>
+          <div class="skill">
+            <p class="skill-name">JavaScript / TypeScript</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 92%"></div></div>
+          </div>
+          <div class="skill">
+            <p class="skill-name">Node.js</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+          </div>
+          <div class="skill">
+            <p class="skill-name">React</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="skill">
+            <p class="skill-name">HTML5</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="skill">
+            <p class="skill-name">CSS3</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+          </div>
+          <div class="skill">
+            <p class="skill-name">Vue.js</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 55%"></div></div>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <h2>Centres d'intérêt</h2>
+          <div class="interest"><span>VTT</span></div>
+          <div class="interest"><span>Trail</span></div>
+          <div class="interest">
+            <span>Ski</span>
+            <span class="note">Moniteur Fédéral 1</span>
+          </div>
+          <div class="interest"><span>Jeux vidéo</span></div>
+        </div>
+
+        <div class="social">
+          <a href="https://www.linkedin.com/in/pdonias" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            pdonias
+          </a>
+          <a href="https://github.com/pdonias" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            pdonias
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</body>
+</html>
