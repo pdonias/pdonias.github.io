@@ -87,8 +87,9 @@ ul li a svg {
   flex-shrink: 0;
 }
 
-.lang-switch {
-  position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
