@@ -7,37 +7,17 @@
   <meta name="description" content="Pierre Donias — Senior Web Developer at Vates SAS">
   <title>Pierre Donias</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" href="theme.css">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #ffffff;
-        --text: #1c2128;
-        --muted: #636e7b;
-        --accent: #0550ae;
-        --border: #d8dee4;
-        --hover-bg: #f3f4f6;
-      }
+      :root { --hover-bg: #f3f4f6; }
     }
 
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0d1117;
-        --text: #e6edf3;
-        --muted: #848d97;
-        --accent: #58a6ff;
-        --border: #30363d;
-        --hover-bg: #161b22;
-      }
+      :root { --hover-bg: #161b22; }
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Helvetica, Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       min-height: 100dvh;
@@ -45,8 +25,6 @@
       align-items: center;
       justify-content: center;
       padding: 3rem 1.5rem;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     main {
