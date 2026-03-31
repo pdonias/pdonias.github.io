@@ -1,0 +1,94 @@
+@media (prefers-color-scheme: light) {
+  :root { --hover-bg: #f3f4f6; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --hover-bg: #161b22; }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.role {
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.role a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.role a:hover {
+  text-decoration: underline;
+}
+
+.bio {
+  margin-top: 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: -0.4rem;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+ul li a:hover {
+  color: var(--text);
+  background-color: var(--hover-bg);
+}
+
+ul li a svg {
+  flex-shrink: 0;
+}
+
+.lang-switch {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}

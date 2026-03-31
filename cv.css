@@ -329,27 +329,6 @@ section:last-child {
   padding: 0 0.25rem;
 }
 
-.print-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.9rem;
-  font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--muted);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.print-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
 
 /* ── Print ───────────────────────────────────────────────── */
 
